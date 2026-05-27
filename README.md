@@ -65,14 +65,11 @@ streamlit run app.py
 ```
 (Note: Ensure your SEC filings / PDFs are placed in the designated data/ folder before initializing the vector store).
 
-🗂️ Project Structure
-app.py: Main Streamlit UI entry point.
-
-graph_builder.py: LangGraph state management and node orchestration.
-
-agents/: Contains the logic for the Supervisor, Quant, Research, and Sentiment agents.
-
-tools/: Python/Pandas mathematical execution environment and ChromaDB retriever.
+## 🗂️ Project Structure
+* `app.py`: Main Streamlit UI entry point.
+* `supervisor.py` & `agent.py`: LangGraph state management, routing logic, and core node orchestration.
+* `agents/`: Contains specialized logic for the individual worker agents.
+* `rag/`, `ingest.py` & `query.py`: Local ChromaDB vector store ingestion, document chunking, and retrieval pipelines.
 
 🔮 Future Roadmap
 Hybrid Search Integration: Transitioning from pure semantic vector search to a Hybrid Search model (BM25 + Vector) to guarantee exact-match retrieval for highly specific accounting terminology.
