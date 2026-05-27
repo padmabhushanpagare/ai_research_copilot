@@ -1,0 +1,16 @@
+# Secrets (CRITICAL)
+.env
+
+# Python Virtual Environment
+venv/
+env/
+.venv/
+__pycache__/
+
+# Databases & State
+chroma_db/
+ingestion_state.json
+extracted_backup.md
+
+# Large files
+*.pdf
