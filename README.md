@@ -49,7 +49,7 @@ git clone https://github.com/padmabhushanpagare/ai_research_copilot.git
 cd ai_research_copilot
 pip install -r requirements.txt
 
-**2. Set up your environment variables:**
+2. Set up your environment variables:
 Create a .env file in the root directory and add your API keys:
 
 # AI Provider
@@ -61,7 +61,7 @@ LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
 LANGCHAIN_API_KEY=your_langsmith_api_key_here
 LANGCHAIN_PROJECT="quant_ai_research_copilot"
 
-**3. Run the application:**
+3. Run the application:
 
 streamlit run app.py
 
