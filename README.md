@@ -38,10 +38,45 @@ Full execution tracing is integrated via **LangSmith** to provide a complete aud
 * **Batch Document Grading:** Optimized document relevance grading to minimize API calls and prevent context bloat.
 * **Graceful Degradation:** If the Quant Agent cannot find sufficient data to populate the Pandas matrix, it safely falls back to a natural language response rather than hallucinating numbers.
 
+> ![alt text](925shots_so.png)
+*Caption: The Streamlit UI rendering a dynamic Pandas dataframe and YoY growth chart from the Quant Agent.*
+
 ## 🛠️ Installation & Usage
 
 **1. Clone the repository and install dependencies:**
 ```bash
-git clone [https://github.com/YourUsername/ai_research_copilot.git](https://github.com/YourUsername/ai_research_copilot.git)
+git clone https://github.com/padmabhushanpagare/ai_research_copilot.git
 cd ai_research_copilot
 pip install -r requirements.txt
+
+**2. Set up your environment variables:**
+Create a .env file in the root directory and add your API keys:
+
+# AI Provider
+GEMINI_API_KEY=your_google_api_key_here
+
+# LangSmith Observability (Optional but recommended)
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
+LANGCHAIN_API_KEY=your_langsmith_api_key_here
+LANGCHAIN_PROJECT="quant_ai_research_copilot"
+
+**3. Run the application:**
+
+streamlit run app.py
+
+(Note: Ensure your SEC filings / PDFs are placed in the designated data/ folder before initializing the vector store).
+
+🗂️ Project Structure
+app.py: Main Streamlit UI entry point.
+
+graph_builder.py: LangGraph state management and node orchestration.
+
+agents/: Contains the logic for the Supervisor, Quant, Research, and Sentiment agents.
+
+tools/: Python/Pandas mathematical execution environment and ChromaDB retriever.
+
+🔮 Future Roadmap
+Hybrid Search Integration: Transitioning from pure semantic vector search to a Hybrid Search model (BM25 + Vector) to guarantee exact-match retrieval for highly specific accounting terminology.
+
+Context Reranking: Implementing a Cross-Encoder (e.g., Cohere) to maximize context density within the LLM window while minimizing token costs.
