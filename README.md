@@ -35,36 +35,34 @@ Full execution tracing is integrated via **LangSmith** to provide a complete aud
 ## 🚀 Key Features
 
 * **Dynamic UI Rendering:** The Streamlit frontend automatically adapts to the agent's output, rendering Markdown text, Sentiment Reports, or interactive Pandas DataFrames and Line Charts based on the routed intent.
-* **Batch Document Grading:** Optimized document relevance grading to minimize API calls and prevent context bloat.
-* **Graceful Degradation:** If the Quant Agent cannot find sufficient data to populate the Pandas matrix, it safely falls back to a natural language response rather than hallucinating numbers.
-
 > ![alt text](925shots_so.png)
 *Caption: The Streamlit UI rendering a dynamic Pandas dataframe and YoY growth chart from the Quant Agent.*
+* **Batch Document Grading:** Optimized document relevance grading to minimize API calls and prevent context bloat.
+* **Graceful Degradation:** If the Quant Agent cannot find sufficient data to populate the Pandas matrix, it safely falls back to a natural language response rather than hallucinating numbers.
 
 ## 🛠️ Installation & Usage
 
 **1. Clone the repository and install dependencies:**
 ```bash
-git clone https://github.com/padmabhushanpagare/ai_research_copilot.git
+git clone [https://github.com/padmabhushanpagare/ai_research_copilot.git](https://github.com/padmabhushanpagare/ai_research_copilot.git)
 cd ai_research_copilot
 pip install -r requirements.txt
-
+```
 2. Set up your environment variables:
 Create a .env file in the root directory and add your API keys:
 
 # AI Provider
 GEMINI_API_KEY=your_google_api_key_here
-
 # LangSmith Observability (Optional but recommended)
 LANGCHAIN_TRACING_V2=true
-LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
+LANGCHAIN_ENDPOINT="[https://api.smith.langchain.com]"
 LANGCHAIN_API_KEY=your_langsmith_api_key_here
-LANGCHAIN_PROJECT="quant_ai_research_copilot"
+LANGCHAIN_PROJECT="ai_research_copilot"
 
 3. Run the application:
-
+```bash
 streamlit run app.py
-
+```
 (Note: Ensure your SEC filings / PDFs are placed in the designated data/ folder before initializing the vector store).
 
 🗂️ Project Structure
