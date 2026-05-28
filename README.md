@@ -29,13 +29,13 @@ To align with strict financial data governance standards, this architecture util
 
 Full execution tracing is integrated via **LangSmith** to provide a complete audit trail of the AI's reasoning process.
 
-> ![alt text](626shots_so.png)
+> ![alt text](tracing.png)
 *Caption: LangSmith trace demonstrating successful intent routing, token consumption tracking, and latency monitoring.*
 
 ## 🚀 Key Features
 
 * **Dynamic UI Rendering:** The Streamlit frontend automatically adapts to the agent's output, rendering Markdown text, Sentiment Reports, or interactive Pandas DataFrames and Line Charts based on the routed intent.
-> ![alt text](925shots_so.png)
+> ![alt text](dashboard.png)
 *Caption: The Streamlit UI rendering a dynamic Pandas dataframe and YoY growth chart from the Quant Agent.*
 * **Batch Document Grading:** Optimized document relevance grading to minimize API calls and prevent context bloat.
 * **Graceful Degradation:** If the Quant Agent cannot find sufficient data to populate the Pandas matrix, it safely falls back to a natural language response rather than hallucinating numbers.
@@ -44,7 +44,7 @@ Full execution tracing is integrated via **LangSmith** to provide a complete aud
 
 **1. Clone the repository and install dependencies:**
 ```bash
-git clone [https://github.com/padmabhushanpagare/ai_research_copilot.git](https://github.com/padmabhushanpagare/ai_research_copilot.git)
+git clone https://github.com/padmabhushanpagare/ai_research_copilot.git
 cd ai_research_copilot
 pip install -r requirements.txt
 ```
